@@ -35,6 +35,7 @@ public class User {
     private Set<Role> roles;
 
     public User() { }
+
     public UserDto toUserDto(){
         UserDto userDto = new UserDto();
         userDto.setId(this.id);
