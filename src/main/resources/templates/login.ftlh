@@ -1,3 +1,4 @@
+<#include "security.ftlh">
 <!DOCTYPE html>
 <html lang="en">
 <head>
