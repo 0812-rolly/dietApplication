@@ -7,7 +7,7 @@
     <title>Войти</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
-<#--    <link rel="stylesheet" href="style.css">-->
+    <#--    <link rel="stylesheet" href="style.css">-->
     <style>
         :root {
             --black-color: #332F2F;
@@ -34,7 +34,7 @@
             background-image: url(images/Фон\ войти.svg);
             background-position: right;
             background-repeat: no-repeat; */
-            background-image: url(images/bg_new.svg);
+            background-image: url(https://sun9-75.userapi.com/impf/hVs9VvyaOBZdn1pq-doahEsTSipzGLYVRJapdQ/zATBBLi-zb8.jpg?size=1920x1126&quality=96&proxy=1&sign=4631d3508bcf977862f4c71c986ae55d&type=album);
             background-repeat: no-repeat;
             background-position: bottom right;
             background-size: 100% auto;
@@ -89,7 +89,7 @@
             top: 500px;
         }
 
-        a.logIn {
+        a.logIn{
             position: absolute;
             width: 351px;
             height: 88px;
@@ -101,13 +101,32 @@
             font-style: normal;
             font-weight: 600;
             font-size: 29px;
-            line-height: 35px;
             color: var(--white-color);
             text-decoration: none;
             text-align: center;
             line-height: 88px;
             transition: background-color 400ms;
         }
+
+
+        /*a.logIn {*/
+        /*    position: absolute;*/
+        /*    width: 351px;*/
+        /*    height: 88px;*/
+        /*    left: 131px;*/
+        /*    top: 720px;*/
+        /*    background: var(--green-color);*/
+        /*    box-shadow: 0px 0px 16px 4px rgba(47, 255, 29, 0.3), 13px 13px 26px rgba(0, 0, 0, 0.25), inset -2px 5px 6px rgba(255, 244, 244, 0.41);*/
+        /*    border-radius: 100px;*/
+        /*    font-style: normal;*/
+        /*    font-weight: 600;*/
+        /*    font-size: 29px;*/
+        /*    color: var(--white-color);*/
+        /*    text-decoration: none;*/
+        /*    text-align: center;*/
+        /*    line-height: 88px;*/
+        /*    transition: background-color 400ms;*/
+        /*}*/
 
         .left input[type="text"],
         [type="password"] {
@@ -132,6 +151,7 @@
 
         .left input[type="password"] {
             top: 600px;
+            font-weight: 1000;
         }
 
         .right .welcome {
@@ -238,19 +258,29 @@
     <!-- <img class="bg" src="images/Фон войти.svg" alt=""> -->
     <div class="left">
         <p class="inPage">ВОЙТИ</p>
-        <p class="email">Электронная почта</p>
-        <input type="text">
-        <p class="password">Пароль</p>
-        <input type="password">
-        <a href="#" class="logIn">Войти в аккаунт</a>
+        <#--        <p class="email">Электронная почта</p>-->
+        <#--        <input type="text" name="username">-->
+        <#--        <p class="password">Пароль</p>-->
+        <#--        <input type="password" name="password">-->
+        <#--        <a href="#" class="logIn">Войти в аккаунт</a>-->
+        <form action="/login" method="post" class="form">
+            <p class="email">Электронная почта</p>
+            <input type="text" name="username">
+            <p class="password">Пароль</p>
+            <input type="password" name="password">
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
+            <a href="#" type="submit" class="logIn">Войти в аккаунт</a>
+            <#--            <div><input type="submit" class="button" value="Войти в аккаунт"/></div>-->
+        </form>
     </div>
 
     <div class="right">
         <p class="welcome">ДОБРО ПОЖАЛОВАТЬ</p>
         <p class="info">У Вас ещё нет аккаунта? Создайте его и заполните всю необходимую информацию в личном кабинете -
             это займет меньше минуты</p>
-        <a href="#" class="registrate">Зарегистрироваться</a>
+        <a href="/registration" class="registrate">Зарегистрироваться</a>
     </div>
+
 </div>
 </body>
 </html>
