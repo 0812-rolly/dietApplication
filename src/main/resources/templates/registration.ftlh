@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Регистрация</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap"
-          rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+    <#--    <link rel="stylesheet" href="style.css">-->
     <style>
         /*Colors*/
 
@@ -24,6 +24,7 @@
             --lightGreen-color: #E9FDE6;
             --lightBlue-color: #EEF3FF;
             --lightPurple-color: #F3EDFF;
+            --green-hover-color: #37e735;
         }
 
         * {
@@ -36,24 +37,22 @@
         }
 
         .wrapper {
-            width: 1440px;
             margin: 0 auto;
             padding: 0 0px;
         }
+
 
         /* Header - Navigation */
 
         .desktop-nav {
             display: flex;
-            justify-content: space-between;
             align-items: center;
             background: var(--gray-color);
             box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.13);
-            padding: 28px 640px;
-
+            padding: 20px 400px;
             position: fixed;
             z-index: 200;
-            width: 1820;
+            width: 100%;
         }
 
         .desktop-nav .menu-items {
@@ -61,77 +60,72 @@
             display: flex;
         }
 
-        .logo {
-            position: absolute;
-            width: 42px;
-            height: 72px;
-            left: 90px;
-            top: 8px;
-        }
-
         .desktop-nav .menu-items li {
             margin: 0 30px;
-        }
-
-        .active {
-            position: absolute;
-            width: 500px;
-            height: 30px;
-            left: 220px;
-            top: 16px;
-        }
-
-        .ration {
-            position: absolute;
-            width: 500px;
-            height: 30px;
-            left: 340px;
-            top: 16px;
         }
 
         .desktop-nav .menu-items li a {
             text-decoration: none;
             color: #332F2F;
             font-weight: 300;
-            font-size: 15px;
+            font-size: 17px;
             line-height: 24px;
         }
 
-        .desktop-nav .login-items {
-            list-style: none;
+        .login-item {
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 24px;
             position: absolute;
-            width: 300px;
-            height: 24px;
-            left: 1120px;
-            top: 16px;
+            right: 400px;
         }
 
-        .desktop-nav .login-items li {
-            margin: 0 30px;
-        }
-
-        .desktop-nav .login-items li a {
+        .login-item a {
             text-decoration: none;
             color: #332F2F;
-            font-weight: 300;
-            font-size: 15px;
-            line-height: 24px;
-        }
-        .user {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 1150px;
-            top: 16px;
         }
 
-        .arrow {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            left: 1345px;
-            top: 18px;
+        .personal_area {
+            margin: 0 5px;
         }
+
+        .login-item img {
+            vertical-align: middle;
+        }
+
+        .submenu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+        }
+
+        .login-item ul {
+            background: #FFFFFF;
+            border: 1px solid rgba(169, 163, 163, 0.53);
+            box-sizing: border-box;
+            border-radius: 36px;
+            list-style: none;
+            white-space: nowrap;
+            padding: 1em;
+        }
+
+        .login-item ul li {
+            padding: 1em;
+            text-align: center;
+        }
+
+        .login-item:hover>.submenu {
+            display: flex;
+        }
+
+        .desktop-nav .menu-items a:hover {
+            color: var(--green-hover-color);
+        }
+
+        .submenu a:hover {
+            color: var(--green-hover-color);
+        }
+
 
         /* Info Section */
 
@@ -151,35 +145,35 @@
             font-family: "Montserrat";
             color: var(--black-color);
             position: absolute;
-            width: 620px;
-            height: 30px;
-            left: 455px;
-            top: 110px;
+            /* width: 620px;
+            height: 30px; */
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            top: 150px;
         }
 
         .info-container .center h2 {
             font-size: 15px;
             font-family: "Montserrat", sans-serif;
-            margin: 8px 0 28px 0;
             color: var(--black-color);
             position: absolute;
-            width: 790px;
-            height: 24px;
-            left: 400px;
-            top: 160px;
-        }
-
-        .info-container .btn {
-            text-decoration: none;
+            /* width: 790px;
+            height: 24px; */
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            top: 190px;
         }
 
         .questions {
             position: absolute;
             width: 900px;
             height: 38px;
-            left: 280px;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
             top: 240px;
-
             font-family: Montserrat;
             font-style: normal;
             font-weight: 100;
@@ -188,6 +182,94 @@
             /* identical to box height */
             text-align: center;
         }
+
+        .questions input[type="text"] {
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            border-color: #FFFFFF;
+            background: transparent;
+            outline: none;
+            color: var(--black-color);
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 100;
+            font-size: 20px;
+            line-height: 35px;
+            width: 400px;
+        }
+
+        .questions select {
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 12px;
+            border-color: #FFFFFF;
+            background: transparent;
+            outline: none;
+            color: var(--black-color);
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 100;
+            font-size: 20px;
+            line-height: 35px;
+            width: 400px;
+            padding: 0.3em;
+        }
+
+        .questions option {
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: 100;
+            font-size: 20px;
+            line-height: 35px;
+        }
+
+        .questions h3 {
+            font-weight: 600;
+        }
+
+        .sblock {
+            padding-top: 2em;
+        }
+
+        input[type="submit"] {
+            position: absolute;
+            width: 351px;
+            height: 88px;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%);
+            /* top: 720px; */
+            top: 1100px;
+            background: var(--brightGreen-color);
+            box-shadow: 0px 0px 16px 4px rgba(47, 255, 29, 0.3), 13px 13px 26px rgba(0, 0, 0, 0.25), inset -2px 5px 6px rgba(255, 244, 244, 0.41);
+            border-radius: 100px;
+            border: none;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 29px;
+            color: var(--white-color);
+            text-decoration: none;
+            text-align: center;
+            line-height: 88px;
+            border: none;
+            transition: background-color 400ms;
+        }
+
+        .extra {
+            padding-bottom: 1em;
+        }
+
+        input[type="submit"]:hover {
+            background: var(--green-hover-color);
+        }
+
+        .questions li {
+            list-style-type: none;
+        }
+
+        .questions span {
+            font-weight: 600;
+        }
+
 
         /* Info BG and Spices */
 
@@ -215,7 +297,7 @@
     <nav class="desktop-nav">
         <div class="logo">
             <a href="#">
-                <img src="images/logo.svg" alt="">
+                <img src="https://psv4.userapi.com/c856332/u35211733/docs/d4/db70a96df3ac/logo.png?extra=gOuaQzHaslVthhjf54Qvuu5RjgWodnhR_WGxGZPLBM1eIYSg5op9c2wdesY1o644SFkeniPtGv5clJs784ekT5on6asIr0lJi0Q9xGoSN48RCdpeA_w2aBkpyF4on5TYQSFE7RPwqRO8T73mFQ2-" alt="">
             </a>
         </div>
 
@@ -229,22 +311,14 @@
             </li>
         </ul>
 
-        <div class="user">
-            <a href="#">
-                <img src="images/user.svg" alt="">
-            </a>
-        </div>
-
-        <ul class="login-items">
-            <li>
-                <a href="#" class="personal_area">Личный кабинет</a>
-            </li>
-        </ul>
-
-        <div class="arrow">
-            <a href="#">
-                <img src="images/arrow.svg" alt="">
-            </a>
+        <div class="login-item">
+            <a href=""><img src="https://psv4.userapi.com/c856332/u35211733/docs/d16/a2a1b79e2d67/user.png?extra=3f-5MfOQlFYLy5iQV7_cKxiQYidZS4Z2KRKBcStGMW8rM5rakI_ohx4erW1h_55XIbt4GxPgyBMB0Qc5W2-4Xlg0UmZaOOShLkyj7ZIX7dY63nA1J_E7PPmoDR3Wy4k0dJ6kNJkU-CPq4_UHjEKP"></a>
+            <a href="" class="personal_area">Личный кабинет</a>
+            <ul class="submenu">
+                <li><a href="#">Посмотреть рацион</a></li>
+                <li><a href="#">Изменить настройки</a></li>
+                <li><a href="#">Выйти</a></li>
+            </ul>
         </div>
     </nav>
 
@@ -253,11 +327,11 @@
 
         <div class="center">
             <h1>Заполните информацию о себе</h1>
-            <h2>Это поможет нам подобрать для Вас необходимую суточную калорийность </h2>
+            <h2>Это поможет нам подобрать для Вас необходимую суточную калорийность</h2>
         </div>
 
-        <img class="info-bg" src="images/InfoBG.svg" alt="">
-        <img class="spices" src="images/spices.svg" alt="">
+        <img class="info-bg" src="https://psv4.userapi.com/c856332/u35211733/docs/d11/a00d305dde23/InfoBG.png?extra=GUNw1xIv6aOBSz2W2ieNd45K5Uaxw8y82narUB6j9AGG72eG5lHHrpc86KL5J3d6lkA2_OwcH5aF_u2F7IwuwCKKzwgigKlXCt__QfGi5ex6DnPmQsY-_EmHq3Sylw-sGd0JacQp0sJ6ndEBGnXs" alt="">
+        <img class="spices" src="https://psv4.userapi.com/c537232/u35211733/docs/d1/bb982db9ebec/spices.png?extra=YTVW9v99hyRFLlPPgZvOycM5zOoybwVTaGLjLAWLYFY4Klp-vD2GoTicqNT6teAFQMpHvOaZCuuq29h15bHR5XYurhCkD4-sK7qHIbmLOk6sex4nyJHmeTOaf8rOwzWc-52xYye76UJCxnas9TK-" alt="">
 
     </header>
     <div class="questions">
@@ -265,36 +339,30 @@
             <!-- дописать файл, обрабатывающий полученные данные и метод -->
 
             <p>Логин</p>
-            <p>
-                <input type="text" name="login">
-            </p>
+            <input type="text" name="login">
 
             <p>Пароль</p>
-            <p>
-                <input type="password" name="password">
-            </p>
+            <input type="text" name="password">
 
             <p>Пол</p>
-            <p>
-                <input type="text" name="gender">
-            </p>
+            <!-- <input type="text" name="gender"> -->
+            <form>
+                <p><select name="gender">
+                        <option value="u1">Женский</option>
+                        <option value="u2">Мужской</option>
+                    </select></p>
+            </form>
 
             <p>Рост (см)</p>
-            <p>
-                <input type="text" name="growth">
-            </p>
+            <input type="text" name="growth">
 
-            <p>Вес</p>
-            <p>
-                <input type="text" name="weight">
-            </p>
+            <p>Вес (кг)</p>
+            <input type="text" name="weight">
 
             <p>Возраст</p>
-            <p>
-                <input type="text" name="age">
-            </p>
+            <input type="text" name="age">
 
-            <p>Укажите в поле номер варианта, который характеризует Ваш образ жизни</p>
+            <p class="sblock">Укажите в поле номер варианта, который характеризует Ваш образ жизни</p>
 
             <h3>Уровень активности</h3>
 
@@ -303,19 +371,24 @@
                 <li><span class="low">Слабая</span> активность - занятия спортом 1-3 раза в неделю</li>
                 <li><span class="average">Средняя</span> активность - занятия спортом 3-5 раз в неделю</li>
                 <li><span class="high">Высокая</span> активность - занятия спортом каждый день</li>
-                <li><span class="extra">Экстра</span>-активность - несколько тренировок в день</li>
+                <li class="extra"><span class="extra">Экстра</span>-активность - несколько тренировок в день</li>
             </ol>
-            <p>
-                <input type="text" name="activity">
-            </p>
 
-            <div class="button">
-                <a href="#" class="btn">Зарегистрироваться</a>
-            </div>
+            <form>
+                <p><select name="activity">
+                        <option value="u1">Минимальная</option>
+                        <option value="u2">Слабая</option>
+                        <option value="u1">Средняя</option>
+                        <option value="u2">Высокая</option>
+                        <option value="u1">Экстра</option>
+                    </select></p>
+            </form>
         </form>
 
     </div>
 
+
+    <div><input type="submit" class="button" value="Сохранить" /></div>
 
 
     <!-- End of Info Section -->
