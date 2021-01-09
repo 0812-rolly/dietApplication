@@ -3,11 +3,36 @@
     <html lang="en">
     <head>
         <meta charset="utf-8">
-
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
-              crossorigin="anonymous">
         <style>
+            :root {
+                --black-color: #332F2F;
+                --white-color: #FFFFFF;
+                --gray-color: #F1F2F2;
+                --brightGreen-color: #36D633;
+                --orange-colour: #EC8032;
+                --brightRed-color: #FABCC7;
+                --brightYellow-color: #F4EB98;
+                --lightOrange-color: #FFF0E5;
+                --lightYellow-color: #FFFBE4;
+                --lightGreen-color: #E9FDE6;
+                --lightBlue-color: #EEF3FF;
+                --lightPurple-color: #F3EDFF;
+                --green-hover-color: #37e735;
+            }
+
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: "Montserrat";
+            }
+
+            .wrapper {
+                margin: 0 auto;
+                padding: 0 0px;
+            }
             .desktop-nav {
                 display: flex;
                 align-items: center;
@@ -78,12 +103,16 @@
                 text-align: center;
             }
 
+            .desktop-nav .menu-items a:hover {
+                color: var(--green-hover-color);
+            }
+
+            <#if isAdmin>
             .login-item:hover>.submenu {
                 display: flex;
             }
 
-            <#if isAdmin>
-            .desktop-nav .menu-items a:hover {
+            .submenu a:hover {
                 color: var(--green-hover-color);
             }
             <#else>
@@ -92,14 +121,10 @@
             }
             </#if>
 
-            .submenu a:hover {
-                color: var(--green-hover-color);
-            }
         </style>
 
     </head>
     <body>
-
     <div class="wrapper">
         <nav class="desktop-nav">
             <div class="logo">
@@ -121,12 +146,12 @@
             <div class="login-item">
                 <a href=""><img src="https://psv4.userapi.com/c856332/u35211733/docs/d16/a2a1b79e2d67/user.png?extra=3f-5MfOQlFYLy5iQV7_cKxiQYidZS4Z2KRKBcStGMW8rM5rakI_ohx4erW1h_55XIbt4GxPgyBMB0Qc5W2-4Xlg0UmZaOOShLkyj7ZIX7dY63nA1J_E7PPmoDR3Wy4k0dJ6kNJkU-CPq4_UHjEKP"></a>
                 <#if isAdmin>
-                <a href="" class="personal_area">Личный кабинет</a>
-                <ul class="submenu">
-                    <li><a href="#">Посмотреть рацион</a></li>
-                    <li><a href="#">Изменить настройки</a></li>
-                    <li><a href="#">Выйти</a></li>
-                </ul>
+                    <a href="" class="personal_area">Личный кабинет</a>
+                    <ul class="submenu">
+                        <li><a href="#">Посмотреть рацион</a></li>
+                        <li><a href="#">Изменить настройки</a></li>
+                        <li><a href="#">Выйти</a></li>
+                    </ul>
                 <#else>
                     <a href="" class="personal_area">Зарегистироваться/Войти</a>
                 </#if>

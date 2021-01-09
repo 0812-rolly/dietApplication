@@ -1,398 +1,284 @@
+<#import "header.ftlh" as h>
 <#include "security.ftlh">
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
-    <#--    <link rel="stylesheet" href="style.css">-->
-    <style>
-        /*Colors*/
+<@h.header>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Регистрация</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
+        <#--    <link rel="stylesheet" href="style.css">-->
+        <style>
+            /*Colors*/
 
-        :root {
-            --black-color: #332F2F;
-            --white-color: #FFFFFF;
-            --gray-color: #F1F2F2;
-            --brightGreen-color: #36D633;
-            --orange-colour: #EC8032;
-            --brightRed-color: #FABCC7;
-            --brightYellow-color: #F4EB98;
-            --lightOrange-color: #FFF0E5;
-            --lightYellow-color: #FFFBE4;
-            --lightGreen-color: #E9FDE6;
-            --lightBlue-color: #EEF3FF;
-            --lightPurple-color: #F3EDFF;
-            --green-hover-color: #37e735;
-        }
+            :root {
+                --black-color: #332F2F;
+                --white-color: #FFFFFF;
+                --gray-color: #F1F2F2;
+                --brightGreen-color: #36D633;
+                --orange-colour: #EC8032;
+                --brightRed-color: #FABCC7;
+                --brightYellow-color: #F4EB98;
+                --lightOrange-color: #FFF0E5;
+                --lightYellow-color: #FFFBE4;
+                --lightGreen-color: #E9FDE6;
+                --lightBlue-color: #EEF3FF;
+                --lightPurple-color: #F3EDFF;
+                --green-hover-color: #37e735;
+            }
 
-        * {
-            margin: 0;
-            box-sizing: border-box;
-        }
+            * {
+                margin: 0;
+                box-sizing: border-box;
+            }
 
-        body {
-            font-family: "Montserrat";
-        }
+            body {
+                font-family: "Montserrat";
+            }
 
-        .wrapper {
-            margin: 0 auto;
-            padding: 0 0px;
-        }
+            .wrapper {
+                margin: 0 auto;
+                padding: 0 0px;
+            }
 
+            /* Info Section */
 
-        /* Header - Navigation */
+            .info-container {
+                height: 60vh;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
 
-        .desktop-nav {
-            display: flex;
-            align-items: center;
-            background: var(--gray-color);
-            box-shadow: 0px 0px 12px 6px rgba(0, 0, 0, 0.13);
-            padding: 20px 400px;
-            position: fixed;
-            z-index: 200;
-            width: 100%;
-        }
+            .info-container .center {
+                flex: 1;
+            }
 
-        .desktop-nav .menu-items {
-            list-style: none;
-            display: flex;
-        }
+            .info-container .center h1 {
+                font-size: 30px;
+                font-family: "Montserrat";
+                color: var(--black-color);
+                position: absolute;
+                /* width: 620px;
+                height: 30px; */
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                top: 150px;
+            }
 
-        .desktop-nav .menu-items li {
-            margin: 0 30px;
-        }
+            .info-container .center h2 {
+                font-size: 15px;
+                font-family: "Montserrat", sans-serif;
+                color: var(--black-color);
+                position: absolute;
+                /* width: 790px;
+                height: 24px; */
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                top: 190px;
+            }
 
-        .desktop-nav .menu-items li a {
-            text-decoration: none;
-            color: #332F2F;
-            font-weight: 300;
-            font-size: 17px;
-            line-height: 24px;
-        }
+            .questions {
+                position: absolute;
+                width: 900px;
+                height: 38px;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                top: 240px;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 100;
+                font-size: 20px;
+                line-height: 35px;
+                /* identical to box height */
+                text-align: center;
+            }
 
-        .login-item {
-            font-weight: 300;
-            font-size: 17px;
-            line-height: 24px;
-            position: absolute;
-            right: 400px;
-        }
+            .questions input[type="text"] {
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 12px;
+                border-color: #FFFFFF;
+                background: transparent;
+                outline: none;
+                color: var(--black-color);
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 100;
+                font-size: 20px;
+                line-height: 35px;
+                width: 400px;
+            }
 
-        .login-item a {
-            text-decoration: none;
-            color: #332F2F;
-        }
+            .questions select {
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+                border-radius: 12px;
+                border-color: #FFFFFF;
+                background: transparent;
+                outline: none;
+                color: var(--black-color);
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 100;
+                font-size: 20px;
+                line-height: 35px;
+                width: 400px;
+                padding: 0.3em;
+            }
 
-        .personal_area {
-            margin: 0 5px;
-        }
+            .questions option {
+                font-family: 'Montserrat', sans-serif;
+                font-style: normal;
+                font-weight: 100;
+                font-size: 20px;
+                line-height: 35px;
+            }
 
-        .login-item img {
-            vertical-align: middle;
-        }
+            .questions h3 {
+                font-weight: 600;
+            }
 
-        .submenu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-        }
+            .sblock {
+                padding-top: 2em;
+            }
 
-        .login-item ul {
-            background: #FFFFFF;
-            border: 1px solid rgba(169, 163, 163, 0.53);
-            box-sizing: border-box;
-            border-radius: 36px;
-            list-style: none;
-            white-space: nowrap;
-            padding: 1em;
-        }
+            input[type="submit"] {
+                position: absolute;
+                width: 351px;
+                height: 88px;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                /* top: 720px; */
+                top: 1100px;
+                background: var(--brightGreen-color);
+                box-shadow: 0px 0px 16px 4px rgba(47, 255, 29, 0.3), 13px 13px 26px rgba(0, 0, 0, 0.25), inset -2px 5px 6px rgba(255, 244, 244, 0.41);
+                border-radius: 100px;
+                border: none;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 29px;
+                color: var(--white-color);
+                text-decoration: none;
+                text-align: center;
+                line-height: 88px;
+                border: none;
+                transition: background-color 400ms;
+            }
 
-        .login-item ul li {
-            padding: 1em;
-            text-align: center;
-        }
+            .extra {
+                padding-bottom: 1em;
+            }
 
-        .login-item:hover>.submenu {
-            display: flex;
-        }
+            input[type="submit"]:hover {
+                background: var(--green-hover-color);
+            }
 
-        .desktop-nav .menu-items a:hover {
-            color: var(--green-hover-color);
-        }
+            .questions li {
+                list-style-type: none;
+            }
 
-        .submenu a:hover {
-            color: var(--green-hover-color);
-        }
-
-
-        /* Info Section */
-
-        .info-container {
-            height: 60vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .info-container .center {
-            flex: 1;
-        }
-
-        .info-container .center h1 {
-            font-size: 30px;
-            font-family: "Montserrat";
-            color: var(--black-color);
-            position: absolute;
-            /* width: 620px;
-            height: 30px; */
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            top: 150px;
-        }
-
-        .info-container .center h2 {
-            font-size: 15px;
-            font-family: "Montserrat", sans-serif;
-            color: var(--black-color);
-            position: absolute;
-            /* width: 790px;
-            height: 24px; */
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            top: 190px;
-        }
-
-        .questions {
-            position: absolute;
-            width: 900px;
-            height: 38px;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            top: 240px;
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: 100;
-            font-size: 20px;
-            line-height: 35px;
-            /* identical to box height */
-            text-align: center;
-        }
-
-        .questions input[type="text"] {
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 12px;
-            border-color: #FFFFFF;
-            background: transparent;
-            outline: none;
-            color: var(--black-color);
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: 100;
-            font-size: 20px;
-            line-height: 35px;
-            width: 400px;
-        }
-
-        .questions select {
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 12px;
-            border-color: #FFFFFF;
-            background: transparent;
-            outline: none;
-            color: var(--black-color);
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: 100;
-            font-size: 20px;
-            line-height: 35px;
-            width: 400px;
-            padding: 0.3em;
-        }
-
-        .questions option {
-            font-family: 'Montserrat', sans-serif;
-            font-style: normal;
-            font-weight: 100;
-            font-size: 20px;
-            line-height: 35px;
-        }
-
-        .questions h3 {
-            font-weight: 600;
-        }
-
-        .sblock {
-            padding-top: 2em;
-        }
-
-        input[type="submit"] {
-            position: absolute;
-            width: 351px;
-            height: 88px;
-            left: 50%;
-            margin-right: -50%;
-            transform: translate(-50%, -50%);
-            /* top: 720px; */
-            top: 1100px;
-            background: var(--brightGreen-color);
-            box-shadow: 0px 0px 16px 4px rgba(47, 255, 29, 0.3), 13px 13px 26px rgba(0, 0, 0, 0.25), inset -2px 5px 6px rgba(255, 244, 244, 0.41);
-            border-radius: 100px;
-            border: none;
-            font-style: normal;
-            font-weight: 600;
-            font-size: 29px;
-            color: var(--white-color);
-            text-decoration: none;
-            text-align: center;
-            line-height: 88px;
-            border: none;
-            transition: background-color 400ms;
-        }
-
-        .extra {
-            padding-bottom: 1em;
-        }
-
-        input[type="submit"]:hover {
-            background: var(--green-hover-color);
-        }
-
-        .questions li {
-            list-style-type: none;
-        }
-
-        .questions span {
-            font-weight: 600;
-        }
+            .questions span {
+                font-weight: 600;
+            }
 
 
-        /* Info BG and Spices */
+            /* Info BG and Spices */
 
-        .info-bg {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            z-index: -1;
-        }
+            .info-bg {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                z-index: -1;
+            }
 
-        .info-container .spices {
-            position: absolute;
-            z-index: -1;
-            width: 30%;
-            top: 450px;
-            left: 0px;
-        }
-    </style>
-</head>
+            .info-container .spices {
+                position: absolute;
+                z-index: -1;
+                width: 30%;
+                top: 450px;
+                left: 0px;
+            }
+        </style>
+    </head>
 
-<body>
+    <body>
 
-<div class="wrapper">
-    <nav class="desktop-nav">
-        <div class="logo">
-            <a href="#">
-                <img src="https://psv4.userapi.com/c856332/u35211733/docs/d4/db70a96df3ac/logo.png?extra=gOuaQzHaslVthhjf54Qvuu5RjgWodnhR_WGxGZPLBM1eIYSg5op9c2wdesY1o644SFkeniPtGv5clJs784ekT5on6asIr0lJi0Q9xGoSN48RCdpeA_w2aBkpyF4on5TYQSFE7RPwqRO8T73mFQ2-" alt="">
-            </a>
-        </div>
+    <div class="wrapper">
+        <header class="info-container">
 
-        <ul class="menu-items">
-            <li>
-                <a href="#" class="active">Главная</a>
-            </li>
+            <div class="center">
+                <h1>Заполните информацию о себе</h1>
+                <h2>Это поможет нам подобрать для Вас необходимую суточную калорийность</h2>
+            </div>
 
-            <li>
-                <a href="#" class="ration">Создать рацион</a>
-            </li>
-        </ul>
+            <img class="info-bg" src="https://psv4.userapi.com/c856332/u35211733/docs/d11/a00d305dde23/InfoBG.png?extra=GUNw1xIv6aOBSz2W2ieNd45K5Uaxw8y82narUB6j9AGG72eG5lHHrpc86KL5J3d6lkA2_OwcH5aF_u2F7IwuwCKKzwgigKlXCt__QfGi5ex6DnPmQsY-_EmHq3Sylw-sGd0JacQp0sJ6ndEBGnXs" alt="">
+            <img class="spices" src="https://psv4.userapi.com/c537232/u35211733/docs/d1/bb982db9ebec/spices.png?extra=YTVW9v99hyRFLlPPgZvOycM5zOoybwVTaGLjLAWLYFY4Klp-vD2GoTicqNT6teAFQMpHvOaZCuuq29h15bHR5XYurhCkD4-sK7qHIbmLOk6sex4nyJHmeTOaf8rOwzWc-52xYye76UJCxnas9TK-" alt="">
 
-        <div class="login-item">
-            <a href=""><img src="https://psv4.userapi.com/c856332/u35211733/docs/d16/a2a1b79e2d67/user.png?extra=3f-5MfOQlFYLy5iQV7_cKxiQYidZS4Z2KRKBcStGMW8rM5rakI_ohx4erW1h_55XIbt4GxPgyBMB0Qc5W2-4Xlg0UmZaOOShLkyj7ZIX7dY63nA1J_E7PPmoDR3Wy4k0dJ6kNJkU-CPq4_UHjEKP"></a>
-            <a href="" class="personal_area">Личный кабинет</a>
-            <ul class="submenu">
-                <li><a href="#">Посмотреть рацион</a></li>
-                <li><a href="#">Изменить настройки</a></li>
-                <li><a href="#">Выйти</a></li>
-            </ul>
-        </div>
-    </nav>
+        </header>
+        <div class="questions">
+            <form action="/registration" method="POST" name="GetInfoForm">
+                <!-- дописать файл, обрабатывающий полученные данные и метод -->
 
-    <!-- End of Desktop Navigation -->
-    <header class="info-container">
+                <p>Почта</p>
+                <input type="text" name="login">
 
-        <div class="center">
-            <h1>Заполните информацию о себе</h1>
-            <h2>Это поможет нам подобрать для Вас необходимую суточную калорийность</h2>
-        </div>
+                <p>Пароль</p>
+                <input type="text" name="password">
 
-        <img class="info-bg" src="https://psv4.userapi.com/c856332/u35211733/docs/d11/a00d305dde23/InfoBG.png?extra=GUNw1xIv6aOBSz2W2ieNd45K5Uaxw8y82narUB6j9AGG72eG5lHHrpc86KL5J3d6lkA2_OwcH5aF_u2F7IwuwCKKzwgigKlXCt__QfGi5ex6DnPmQsY-_EmHq3Sylw-sGd0JacQp0sJ6ndEBGnXs" alt="">
-        <img class="spices" src="https://psv4.userapi.com/c537232/u35211733/docs/d1/bb982db9ebec/spices.png?extra=YTVW9v99hyRFLlPPgZvOycM5zOoybwVTaGLjLAWLYFY4Klp-vD2GoTicqNT6teAFQMpHvOaZCuuq29h15bHR5XYurhCkD4-sK7qHIbmLOk6sex4nyJHmeTOaf8rOwzWc-52xYye76UJCxnas9TK-" alt="">
+                <p>Пол</p>
+                <!-- <input type="text" name="gender"> -->
+                <form>
+                    <p><select name="gender">
+                            <option value="u1">Женский</option>
+                            <option value="u2">Мужской</option>
+                        </select></p>
+                </form>
 
-    </header>
-    <div class="questions">
-        <form action="" method="POST" name="GetInfoForm">
-            <!-- дописать файл, обрабатывающий полученные данные и метод -->
+                <p>Рост (см)</p>
+                <input type="text" name="growth">
 
-            <p>Логин</p>
-            <input type="text" name="login">
+                <p>Вес (кг)</p>
+                <input type="text" name="weight">
 
-            <p>Пароль</p>
-            <input type="text" name="password">
+                <p>Возраст</p>
+                <input type="text" name="age">
 
-            <p>Пол</p>
-            <!-- <input type="text" name="gender"> -->
-            <form>
-                <p><select name="gender">
-                        <option value="u1">Женский</option>
-                        <option value="u2">Мужской</option>
-                    </select></p>
+                <p class="sblock">Укажите в поле номер варианта, который характеризует Ваш образ жизни</p>
+
+                <h3>Уровень активности</h3>
+
+                <ol>
+                    <li><span class="min">Минимальная</span> активность - сидячий образ жизни, без спорта</li>
+                    <li><span class="low">Слабая</span> активность - занятия спортом 1-3 раза в неделю</li>
+                    <li><span class="average">Средняя</span> активность - занятия спортом 3-5 раз в неделю</li>
+                    <li><span class="high">Высокая</span> активность - занятия спортом каждый день</li>
+                    <li class="extra"><span class="extra">Экстра</span>-активность - несколько тренировок в день</li>
+                </ol>
+
+                <form>
+                    <p><select name="activity">
+                            <option value="u1">Минимальная</option>
+                            <option value="u2">Слабая</option>
+                            <option value="u1">Средняя</option>
+                            <option value="u2">Высокая</option>
+                            <option value="u1">Экстра</option>
+                        </select></p>
+                </form>
             </form>
 
-            <p>Рост (см)</p>
-            <input type="text" name="growth">
+        </div>
 
-            <p>Вес (кг)</p>
-            <input type="text" name="weight">
+        <#if isAdmin>
+            <div><input type="submit" class="button" value="Сохранить" /></div>
+        <#else>
+            <div><input type="submit" class="button" value="Зарегистрироваться" /></div>
+        </#if>
 
-            <p>Возраст</p>
-            <input type="text" name="age">
-
-            <p class="sblock">Укажите в поле номер варианта, который характеризует Ваш образ жизни</p>
-
-            <h3>Уровень активности</h3>
-
-            <ol>
-                <li><span class="min">Минимальная</span> активность - сидячий образ жизни, без спорта</li>
-                <li><span class="low">Слабая</span> активность - занятия спортом 1-3 раза в неделю</li>
-                <li><span class="average">Средняя</span> активность - занятия спортом 3-5 раз в неделю</li>
-                <li><span class="high">Высокая</span> активность - занятия спортом каждый день</li>
-                <li class="extra"><span class="extra">Экстра</span>-активность - несколько тренировок в день</li>
-            </ol>
-
-            <form>
-                <p><select name="activity">
-                        <option value="u1">Минимальная</option>
-                        <option value="u2">Слабая</option>
-                        <option value="u1">Средняя</option>
-                        <option value="u2">Высокая</option>
-                        <option value="u1">Экстра</option>
-                    </select></p>
-            </form>
-        </form>
+        <!-- End of Info Section -->
 
     </div>
-
-
-    <div><input type="submit" class="button" value="Сохранить" /></div>
-
-
-    <!-- End of Info Section -->
-
-</div>
-</body>
-</html>
+    </body>
+</@h.header>
