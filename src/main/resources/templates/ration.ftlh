@@ -303,6 +303,11 @@
                 padding-top: 0.5em;
             }
 
+            .recipe_products {
+                text-align: justify;
+                font-size: 23px;
+            }
+
             /* Images Section */
 
             .elips-container .yellow_elips {
@@ -375,7 +380,9 @@
 
                 <div class="ingredients">
                     <p class="ingredients_text">Ингредиенты</p>
-                    <#--                    <p class="recipe_products">${BREAKFAST.products}</p>-->
+                    <#list BREAKFAST.products?keys as key>
+                        <p class="recipe_products">${key} - ${BREAKFAST.products[key]} гр</p>
+                    </#list>
                 </div>
 
                 <div class="recipe">
@@ -397,6 +404,9 @@
 
                 <div class="ingredients">
                     <p class="ingredients_text">Ингредиенты</p>
+                    <#list LUNCH.products?keys as key>
+                        <p class="recipe_products">${key} - ${LUNCH.products[key]} гр</p>
+                    </#list>
                 </div>
 
                 <div class="recipe">
@@ -419,6 +429,9 @@
 
                 <div class="ingredients">
                     <p class="ingredients_text">Ингредиенты</p>
+                    <#list DINNER.products?keys as key>
+                        <p class="recipe_products">${key} - ${DINNER.products[key]} гр</p>
+                    </#list>
                 </div>
 
                 <div class="recipe">
