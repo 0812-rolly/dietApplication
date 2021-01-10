@@ -109,12 +109,30 @@
                 top: 160px;
             }
 
+            .breakfast .ingredience {
+                position: absolute;
+                width: 390px;
+                height: 512px;
+                left: 60px;
+                top: 160px;
+                z-index: 1;
+            }
+
             .breakfast .rectangle-container .rectangle2 {
                 position: absolute;
                 width: 540px;
                 height: 512px;
                 left: 500px;
                 top: 160px;
+            }
+
+            .breakfast .recipe {
+                position: absolute;
+                width: 540px;
+                height: 512px;
+                left: 500px;
+                top: 160px;
+                z-index: 1;
             }
 
             .breakfast h1 {
@@ -133,26 +151,10 @@
 
             .breakfast p1 {
                 position: absolute;
-                width: 248px;
-                height: 40px;
-                left: 150px;
-                top: 190px;
-                z-index: 1;
-                font-family: Montserrat;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 28px;
-                line-height: 40px;
-                color: #332F2F;
-            }
-
-            .breakfast p2 {
-                position: absolute;
-                width: 248px;
-                height: 40px;
-                left: 708px;
-                top: 190px;
-                z-index: 1;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                padding-top: 3em;
                 font-family: Montserrat;
                 font-style: normal;
                 font-weight: bold;
@@ -183,12 +185,30 @@
                 top: 160px;
             }
 
+            .lunch .ingredience {
+                position: absolute;
+                width: 390px;
+                height: 512px;
+                left: 60px;
+                top: 160px;
+                z-index: 1;
+            }
+
             .lunch .rectangle-container .rectangle2 {
                 position: absolute;
                 width: 540px;
                 height: 512px;
                 left: 500px;
                 top: 160px;
+            }
+
+            .lunch .recipe {
+                position: absolute;
+                width: 540px;
+                height: 512px;
+                left: 500px;
+                top: 160px;
+                z-index: 1;
             }
 
             .lunch h1 {
@@ -207,26 +227,10 @@
 
             .lunch p1 {
                 position: absolute;
-                width: 248px;
-                height: 40px;
-                left: 150px;
-                top: 190px;
-                z-index: 1;
-                font-family: Montserrat;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 28px;
-                line-height: 40px;
-                color: #332F2F;
-            }
-
-            .lunch p2 {
-                position: absolute;
-                width: 248px;
-                height: 40px;
-                left: 708px;
-                top: 190px;
-                z-index: 1;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                padding-top: 3em;
                 font-family: Montserrat;
                 font-style: normal;
                 font-weight: bold;
@@ -257,12 +261,30 @@
                 top: 160px;
             }
 
+            .dinner .ingredience {
+                position: absolute;
+                width: 390px;
+                height: 512px;
+                left: 60px;
+                top: 160px;
+                z-index: 1;
+            }
+
             .dinner .rectangle-container .rectangle2 {
                 position: absolute;
                 width: 540px;
                 height: 512px;
                 left: 500px;
                 top: 160px;
+            }
+
+            .dinner .recipe {
+                position: absolute;
+                width: 540px;
+                height: 512px;
+                left: 500px;
+                top: 160px;
+                z-index: 1;
             }
 
             .dinner h1 {
@@ -281,26 +303,10 @@
 
             .dinner p1 {
                 position: absolute;
-                width: 248px;
-                height: 40px;
-                left: 150px;
-                top: 190px;
-                z-index: 1;
-                font-family: Montserrat;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 28px;
-                line-height: 40px;
-                color: #332F2F;
-            }
-
-            .dinner p2 {
-                position: absolute;
-                width: 248px;
-                height: 40px;
-                left: 708px;
-                top: 190px;
-                z-index: 1;
+                left: 50%;
+                margin-right: -50%;
+                transform: translate(-50%, -50%);
+                padding-top: 3em;
                 font-family: Montserrat;
                 font-style: normal;
                 font-weight: bold;
@@ -379,8 +385,14 @@
 
             <div class="breakfast">
                 <h1>Завтрак</h1>
-                <p1>Ингредиенты</p1>
-                <p2>Рецепт</p2>
+
+                <div class="ingredience">
+                    <p1>Ингредиенты</p1>
+                </div>
+
+                <div class="recipe">
+                    <p1>Рецепт</p1>
+                </div>
 
                 <div class="rectangle-container">
                     <img class="rectangle1" src="https://psv4.userapi.com/c532036/u116093025/docs/d21/8969934741e9/rectangle1.png?extra=TCekxZofHhZYnsjIVoIbQGbprv4pDD6IbZVyWFf27qOIw3veUp0ptK16lCOnaBKYaaG0ZitqP9wx58BKpfgb469_ymw3kxLMoYFyg44kwIBQMXOTUd029c7Cb5o-SyG2cJP-OkOsqIMqhxjqDmGiuw"
@@ -393,8 +405,14 @@
 
             <div class="lunch">
                 <h1>Обед</h1>
-                <p1>Ингредиенты</p1>
-                <p2>Рецепт</p2>
+
+                <div class="ingredience">
+                    <p1>Ингредиенты</p1>
+                </div>
+
+                <div class="recipe">
+                    <p1>Рецепт</p1>
+                </div>
 
                 <div class="rectangle-container">
                     <img class="rectangle1" src="https://psv4.userapi.com/c532036/u116093025/docs/d21/8969934741e9/rectangle1.png?extra=TCekxZofHhZYnsjIVoIbQGbprv4pDD6IbZVyWFf27qOIw3veUp0ptK16lCOnaBKYaaG0ZitqP9wx58BKpfgb469_ymw3kxLMoYFyg44kwIBQMXOTUd029c7Cb5o-SyG2cJP-OkOsqIMqhxjqDmGiuw"
@@ -407,8 +425,14 @@
 
             <div class="dinner">
                 <h1>Ужин</h1>
-                <p1>Ингредиенты</p1>
-                <p2>Рецепт</p2>
+
+                <div class="ingredience">
+                    <p1>Ингредиенты</p1>
+                </div>
+
+                <div class="recipe">
+                    <p1>Рецепт</p1>
+                </div>
 
                 <div class="rectangle-container">
                     <img class="rectangle1" src="https://psv4.userapi.com/c532036/u116093025/docs/d21/8969934741e9/rectangle1.png?extra=TCekxZofHhZYnsjIVoIbQGbprv4pDD6IbZVyWFf27qOIw3veUp0ptK16lCOnaBKYaaG0ZitqP9wx58BKpfgb469_ymw3kxLMoYFyg44kwIBQMXOTUd029c7Cb5o-SyG2cJP-OkOsqIMqhxjqDmGiuw"
