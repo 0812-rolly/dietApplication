@@ -3,7 +3,7 @@
 <@h.header>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Регистрация</title>
+        <title>Изменить настройки</title>
 
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
@@ -211,37 +211,38 @@
         <header class="info-container">
 
             <div class="center">
-                <h1>Заполните информацию о себе</h1>
-                <h2>Это поможет нам подобрать для Вас необходимую суточную калорийность</h2>
+                <h1>Изменение информации о себе</h1>
+                <h2>Она поможет нам подобрать для Вас необходимую суточную калорийность</h2>
             </div>
 
             <img class="info-bg" src="https://psv4.userapi.com/c856332/u35211733/docs/d11/a00d305dde23/InfoBG.png?extra=GUNw1xIv6aOBSz2W2ieNd45K5Uaxw8y82narUB6j9AGG72eG5lHHrpc86KL5J3d6lkA2_OwcH5aF_u2F7IwuwCKKzwgigKlXCt__QfGi5ex6DnPmQsY-_EmHq3Sylw-sGd0JacQp0sJ6ndEBGnXs" alt="">
             <img class="spices" src="https://psv4.userapi.com/c537232/u35211733/docs/d1/bb982db9ebec/spices.png?extra=YTVW9v99hyRFLlPPgZvOycM5zOoybwVTaGLjLAWLYFY4Klp-vD2GoTicqNT6teAFQMpHvOaZCuuq29h15bHR5XYurhCkD4-sK7qHIbmLOk6sex4nyJHmeTOaf8rOwzWc-52xYye76UJCxnas9TK-" alt="">
 
         </header>
-        <form action="/registration" method="post"  class="form">
+        <form action="/edit_profile" method="post"  class="form">
             <div class="questions">
                 <p>Почта</p>
-                <input type="text" name="email" required="required">
+                <input type="text" name="email" value="${us.email}">
 
                 <p>Пароль</p>
-                <input type="text" name="password" required="required">
+                <input type="text" name="password" value="${us.password}">
 
                 <p>Пол</p>
                 <!-- <input type="text" name="gender"> -->
                 <p><select name="gender">
+                        <option selected="selected">${us.gender}</option>
                         <option value="FEMALE">Женский</option>
                         <option value="MALE">Мужской</option>
                     </select></p>
 
                 <p>Рост (см)</p>
-                <input type="text" name="height" required="required">
+                <input type="text" name="height" value="${us.height}">
 
                 <p>Вес (кг)</p>
-                <input type="text" name="weight" required="required">
+                <input type="text" name="weight" value="${us.weight}">
 
                 <p>Возраст</p>
-                <input type="text" name="age" required="required">
+                <input type="text" name="age" value="${us.age}">
 
                 <p class="sblock">Укажите в поле номер варианта, который характеризует Ваш образ жизни</p>
 
@@ -256,15 +257,16 @@
                 </ol>
 
                 <p><select name="activity">
+                        <option selected="selected">${us.activity}</option>
                         <option value="MINIMUM">Минимальная</option>
                         <option value="LOW">Слабая</option>
                         <option value="NORMAL">Средняя</option>
                         <option value="HIGH">Высокая</option>
                         <option value="EXTRA">Экстра</option>
                     </select></p>
-                <input type="hidden" name="_csrf" value="${_csrf.token}">
             </div>
-            <div><input type="submit" class="bttn" value="Зарегистрироваться" /></div>
+            <div><input type="submit" class="bttn" value="Сохранить" /></div>
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
         </form>
     </div>
     </body>
