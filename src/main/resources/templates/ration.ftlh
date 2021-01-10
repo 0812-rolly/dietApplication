@@ -149,20 +149,26 @@
                 color: #332F2F;
             }
 
-            .breakfast p1 {
-                position: absolute;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-                padding-top: 3em;
+            p {
                 font-family: Montserrat;
                 font-style: normal;
-                font-weight: bold;
                 font-size: 28px;
                 line-height: 40px;
                 color: #332F2F;
+                text-align: center;
+                padding-left: 1em;
+                padding-right: 1em;
             }
 
+            .recipe_text{
+                padding-top: 0.3em;
+                font-weight: bold;
+            }
+
+            .ingredients_text{
+                padding-top: 0.3em;
+                font-weight: bold;
+            }
 
             /* Lunch Section */
 
@@ -222,20 +228,6 @@
                 font-weight: bold;
                 font-size: 56px;
                 line-height: 73px;
-                color: #332F2F;
-            }
-
-            .lunch p1 {
-                position: absolute;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-                padding-top: 3em;
-                font-family: Montserrat;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 28px;
-                line-height: 40px;
                 color: #332F2F;
             }
 
@@ -301,20 +293,15 @@
                 color: #332F2F;
             }
 
-            .dinner p1 {
-                position: absolute;
-                left: 50%;
-                margin-right: -50%;
-                transform: translate(-50%, -50%);
-                padding-top: 3em;
-                font-family: Montserrat;
-                font-style: normal;
-                font-weight: bold;
-                font-size: 28px;
-                line-height: 40px;
-                color: #332F2F;
+            .recipe_name {
+                font-size: 23px;
             }
 
+            .recipe_descr {
+                text-align: justify;
+                font-size: 17px;
+                padding-top: 0.5em;
+            }
 
             /* Images Section */
 
@@ -380,19 +367,21 @@
         <header class="recipe-container">
             <div class="title">
                 <h1>Ваш рацион на сегодня</h1>
-                <a href="#" class="ration_btn">Получить новый рацион</a>
+                <a href="/ration" class="ration_btn">Получить новый рацион</a>
             </div>
 
             <div class="breakfast">
                 <h1>Завтрак</h1>
 
                 <div class="ingredients">
-                    <p1>Ингредиенты</p1>
-                    <p class="card-text">${item.name}</p>
+                    <p class="ingredients_text">Ингредиенты</p>
+                    <#--                    <p class="recipe_products">${BREAKFAST.products}</p>-->
                 </div>
 
                 <div class="recipe">
-                    <p1>Рецепт</p1>
+                    <p class="recipe_text">Рецепт</p>
+                    <p class="recipe_name">${BREAKFAST.name}</p>
+                    <p class="recipe_descr">${BREAKFAST.description}</p>
                 </div>
 
                 <div class="rectangle-container">
@@ -403,16 +392,17 @@
                 </div>
 
             </div>
-
             <div class="lunch">
                 <h1>Обед</h1>
 
                 <div class="ingredients">
-                    <p1>Ингредиенты</p1>
+                    <p class="ingredients_text">Ингредиенты</p>
                 </div>
 
                 <div class="recipe">
-                    <p1>Рецепт</p1>
+                    <p class="recipe_text">Рецепт</p>
+                    <p class="recipe_name">${LUNCH.name}</p>
+                    <p class="recipe_descr">${LUNCH.description}</p>
                 </div>
 
                 <div class="rectangle-container">
@@ -428,11 +418,13 @@
                 <h1>Ужин</h1>
 
                 <div class="ingredients">
-                    <p1>Ингредиенты</p1>
+                    <p class="ingredients_text">Ингредиенты</p>
                 </div>
 
                 <div class="recipe">
-                    <p1>Рецепт</p1>
+                    <p class="recipe_text">Рецепт</p>
+                    <p class="recipe_name">${DINNER.name}</p>
+                    <p class="recipe_descr">${DINNER.description}</p>
                 </div>
 
                 <div class="rectangle-container">
