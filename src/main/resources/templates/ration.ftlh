@@ -109,7 +109,7 @@
                 top: 160px;
             }
 
-            .breakfast .ingredience {
+            .breakfast .ingredients {
                 position: absolute;
                 width: 390px;
                 height: 512px;
@@ -185,7 +185,7 @@
                 top: 160px;
             }
 
-            .lunch .ingredience {
+            .lunch .ingredients {
                 position: absolute;
                 width: 390px;
                 height: 512px;
@@ -261,7 +261,7 @@
                 top: 160px;
             }
 
-            .dinner .ingredience {
+            .dinner .ingredients {
                 position: absolute;
                 width: 390px;
                 height: 512px;
@@ -386,8 +386,9 @@
             <div class="breakfast">
                 <h1>Завтрак</h1>
 
-                <div class="ingredience">
+                <div class="ingredients">
                     <p1>Ингредиенты</p1>
+                    <p class="card-text">${item.name}</p>
                 </div>
 
                 <div class="recipe">
@@ -406,7 +407,7 @@
             <div class="lunch">
                 <h1>Обед</h1>
 
-                <div class="ingredience">
+                <div class="ingredients">
                     <p1>Ингредиенты</p1>
                 </div>
 
@@ -426,7 +427,7 @@
             <div class="dinner">
                 <h1>Ужин</h1>
 
-                <div class="ingredience">
+                <div class="ingredients">
                     <p1>Ингредиенты</p1>
                 </div>
 
