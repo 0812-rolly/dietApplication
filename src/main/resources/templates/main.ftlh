@@ -35,12 +35,33 @@
             }
 
             .wrapper {
-                width: 1440px;
                 margin: 0 auto;
                 padding: 0 0px;
             }
 
             /* Hero Section */
+            a.btn {
+                position: absolute;
+                width: 290px;
+                height: 50px;
+                left: 310px;
+                top: 540px;
+                background: var(--brightGreen-color);
+                box-shadow: 0px 0px 16px 4px rgba(47, 255, 29, 0.3), 13px 13px 26px rgba(0, 0, 0, 0.25), inset -2px 5px 6px rgba(255, 244, 244, 0.41);
+                border-radius: 100px;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 21px;
+                color: var(--white-color);
+                text-decoration: none;
+                text-align: center;
+                line-height: 50px;
+                transition: background-color 400ms;
+            }
+
+            a.btn:hover {
+                background: var(--green-hover-color);
+            }
 
             .hero-container {
                 height: 100vh;
@@ -142,7 +163,7 @@
                 position: absolute;
                 width: 228.37px;
                 height: 370px;
-                left: 1635px;
+                right: 0;
                 top: -10px;
             }
 
@@ -663,43 +684,6 @@
 
     <body>
     <div class="wrapper">
-        <nav class="desktop-nav">
-            <div class="logo">
-                <a href="#">
-                    <img src="images/logo.svg" alt="">
-                </a>
-            </div>
-
-            <ul class="menu-items">
-                <li>
-                    <a href="#" class="active">Главная</a>
-                </li>
-
-                <li>
-                    <a href="#" class="ration">Создать рацион</a>
-                </li>
-            </ul>
-
-            <div class="user">
-                <a href="#">
-                    <img src="images/user.svg" alt="">
-                </a>
-            </div>
-
-            <ul class="login-items">
-                <li>
-                    <a href="#" class="personal_area">Личный кабинет</a>
-                </li>
-            </ul>
-
-            <div class="arrow">
-                <a href="#">
-                    <img src="images/arrow.svg" alt="">
-                </a>
-            </div>
-        </nav>
-
-        <!-- End of Desktop Navigation -->
 
         <header class="hero-container">
             <div class="left">
@@ -709,20 +693,25 @@
                 <p2>Всё, что от Вас требуется - пройти регистрацию и указать всю необходимую информацию в личном
                     кабинете
                 </p2>
-                <a href="#" class="btn">Зарегистрироваться</a>
+                <a href="/registration" class="btn">Получить рацион</a>
+                <#if name != "unknown">
+                    <a href="#" class="btn">Получить рацион</a>
+                <#else>
+                    <a href="/registration" class="btn">Получить рацион</a>
+                </#if>
             </div>
 
             <div class="right">
-                <img class="salad" src="images/salad.png" alt="" />
+                <img class="salad" src="https://psv4.userapi.com/c536436/u35211733/docs/d39/6589f324e0f0/salad.png?extra=AfaC_R133pzwufc5U0dUI4zZSiXqpqv4_oSeQXw-nJJoz5JwjHaH1DQNRvGCJDegPnuitOOBExebret8L5h8HIM-HxQ0m8PgaMDuHqCwJ6W3nMMPTqjjIRU4Z61_50VnrmIZufGfMq_IWMVEj4w1" alt="" />
             </div>
 
-            <img class="homeBG" src="images/HomeBG.png" alt="">
-            <img class="white_elips" src="images/white_elips.png" alt="">
+            <img class="homeBG" src="https://psv4.userapi.com/c536436/u35211733/docs/d17/81f95a4fe8ef/HomeBG.png?extra=NlUsjtc1wbXF9hOeP4kKb5ugJOpJMLftf4PjRbaAGaJczEmZXDxq5o6vPxbgpF26NtBnflpx5Bx8RNspAy1xPbj2-dkfdLtsKwyBfWXSs4XKxI_77Z5UK4TSGXSfQalen5OJFDOzJGBmflF3MFwA" alt="">
+            <img class="white_elips" src="https://psv4.userapi.com/c536436/u35211733/docs/d34/e6a267981712/white_elips.png?extra=YdGJiJ_2AmsGVwjokrtSnLSDZKUC7ZGG1IwvJIzfZkowaix7cVytKhijx-hvoRfCsVuUdSqT6usXfY_XA2cVN3vV8Xbwn8ziMlnx2kvF2BShUM7Fp6lwviOPp8rRNiAHP4ck3FndAmWtXm0edQrg" alt="">
 
             <div class="vegetables-container">
-                <img class="tomato" src="images/tomato.png" alt="">
-                <img class="cucumber" src="images/cucumber.png" alt="">
-                <img class="olives" src="images/olives.png" alt="">
+                <img class="tomato" src="https://psv4.userapi.com/c536436/u35211733/docs/d38/a59637adc3ef/tomato.png?extra=hBWMVoEuNE5h-LLmV1QgtKk53nutVejwRJ0YP3jGlqEnmNdu21GW2B3lV2E26_JvAvVvDP7KoNuW1LqJD5BnBDut6pRmGtkOWwcRE-WOl1ce62ebd89Q74vR2yI7-6f5Ts5q37fslvydWpV-3wrE" alt="">
+                <img class="cucumber" src="https://psv4.userapi.com/c536436/u35211733/docs/d23/7e7b272b47e1/cucumber.png?extra=ySq6plMuLB4W32aO0Gf7BiYIf9VboncRN6qi99283dPxAtc1fPbssgsyjbf81JToo0k1XCg4dp4EQDZ4wWGPk5oy5u4XWlhXIwCR00P174mPkTckSnyV_Q3BHROtegzWDPOZ7XETuTK7higxOhrd" alt="">
+                <img class="olives" src="https://psv4.userapi.com/c536436/u35211733/docs/d23/48fde90fa343/olives.png?extra=Hpbkfh_nx43bOPloBKII8idf43fyALPXuMj-XfEQQegdNqSVvANe3BudSc00ILD2a-Eanje9pf0FMGskBuT7ky1nxahoKDkpamVi8_S5ULl0PZJ6-4_rmJZZ1Z_AW-LcFAgNED2fCIxReaM_Ceaa" alt="">
             </div>
         </header>
 
@@ -732,9 +721,9 @@
             <h1>В чем плюсы правильного питания?</h1>
 
             <div class="plus-container">
-                <img class="energy" src="images/energy.png" alt="">
-                <img class="health" src="images/health.png" alt="">
-                <img class="body" src="images/body.png" alt="">
+                <img class="energy" src="https://psv4.userapi.com/c536436/u35211733/docs/d21/65205f1ad1e7/energy.png?extra=VRsuHaA6uGSMRo1ws9VmreY3xxFSUqoSCPj_CgxS5lf3bJnnvt5m-Mmp2A-lxcHtLU-nQvyxNK1V4bozCHSGsZoTy-GLjqsU2QHgnT1QBYY_1ZaFKlN0htthmtLazUJVexKaAWAhz0_ND-yRn7Qi" alt="">
+                <img class="health" src="https://psv4.userapi.com/c536436/u35211733/docs/d16/594eb20831eb/health.png?extra=WG1Vf76MULYcyIlkGeCp-erZ00T46-6aSh50Lrq7pzk2sMnAotYvqx7_F4qvAp_7lxxi-VOyLsLmKFAuh3Ym9bNg4nopVMmFPgLxav54ErJfIV2_E4qFIlI0B502AbACN8Z9YDC37a119XLtKEi0" alt="">
+                <img class="body" src="https://psv4.userapi.com/c536436/u35211733/docs/d12/dbea1bbf5308/body.png?extra=kNQTyXxbLcHo_vm_1ayDKWHYLxr-mNHMDiVMWv1XHMAmYefll8rssYKQkgPzoWIaFRpeLtBORssvzU54s7ZQSpnE9Oebw-wbNFt-vzOLo__lgrverQ5bU0FzlBBrK_MAB-Q0aYZgtUhm59cfUFAU" alt="">
             </div>
 
             <div class="plus-text-energy">
@@ -766,19 +755,19 @@
             <h1>Основные принципы правильного питания</h1>
 
             <div class="number-container">
-                <img class="one" src="images/1.png" alt="">
-                <img class="two" src="images/2.png" alt="">
-                <img class="three" src="images/3.png" alt="">
-                <img class="four" src="images/4.png" alt="">
-                <img class="five" src="images/5.png" alt="">
+                <img class="one" src="https://psv4.userapi.com/c536436/u35211733/docs/d39/095719cce1f6/1.png?extra=u1NI0aBy2wy6-ltKjImiS80nXQwLTIuAyY6YW-5JqKazHRfUXA5FF3HxYuea0IXdh--sdyjgDmC356lN1hutRL52jbD2UsdpJS1MLBs8Ft37qlKN83k6ormPhZEfJDQ9fazwWxBP57Vh21vKrVWu" alt="">
+                <img class="two" src="https://psv4.userapi.com/c536436/u35211733/docs/d29/b498e44bc16c/2.png?extra=FKA-bgEU8bT9m76SixX-OYJt2fRUF3EcXpVGDPBvWd4ZG19F5H80TbH9VQPy_xS7Le33UKSI5kkUFCNAsRhQo9jAQgrbg2TpPMxmbRIIaZTISQFh4TZ5kr1qHV3qniX_jvHql7ISbCeeCAJqcvjy" alt="">
+                <img class="three" src="https://psv4.userapi.com/c536436/u35211733/docs/d15/82fcf4928b42/3.png?extra=JaQSbyKvXtLZROjLybERoGp50Pg6GX1qCCj8S6VJ24cr5r1ZPLRgMq6wcx1gS7bwqRbbce-gV2lD2mM_mHEI8n2uuCGFVhdAw1oG2eomiQt8N_aLeGjHljUmJC37j7fDnQmClcGGVoQNEMBprYSN" alt="">
+                <img class="four" src="https://psv4.userapi.com/c536436/u35211733/docs/d11/9cff9f457353/4.png?extra=22Nfnz7JnaPjVkuT9k5lzCjvOee9oag3Nxq7vOIs25f1rCwpgoFbdbSHJSk4mdPp3TplmdgmETSHpgdKj_eU8ucBYDthfL8kA4wbnBIi_2wmFk8C3YPZCsX9N48QHE-_sevGqNFP1qBjlmlAkTiR" alt="">
+                <img class="five" src="https://psv4.userapi.com/c536436/u35211733/docs/d49/13b56944f1b3/5.png?extra=Iote2PA_JF1xIbfWxlgmWTIruEdSDFVt7eajU8qAoLoPPk6WikexUQG1Ik0__FKsjE7wC4n_AZsxGbHOLIzpxnnzHWHz6NXzzJtNtdJH2ZGZ7x03KmH--9l49tR_qZ6U3DBl6bPSd236kcylfyrv" alt="">
             </div>
 
             <div class="photo-container">
-                <img class="first_photo" src="images/first_photo.png" alt="">
-                <img class="second_photo" src="images/second_photo.png" alt="">
-                <img class="third_photo" src="images/third_photo.png" alt="">
-                <img class="four_photo" src="images/four_photo.png" alt="">
-                <img class="five_photo" src="images/five_photo.png" alt="">
+                <img class="first_photo" src="https://psv4.userapi.com/c536436/u35211733/docs/d15/a9bd38b39f33/first_photo.png?extra=Mo4-3XiPvx_aurAp8tDOw6YEPJovrRgftHfUBUrEw-5Y2xtB0lHDdVrYJRGQQi4PPKmT-Yho66wr-20rj82XHVhuDLvupONg-W0Hbl32S8cekwueALYP94QlOBNgkgNqquvSQ6WSsa5jd6uH5UDe" alt="">
+                <img class="second_photo" src="https://psv4.userapi.com/c536436/u35211733/docs/d45/44b97ccb9546/second_photo.png?extra=ojpcY3S6EAVTlWbretG_Dia-BFcHCUzjQwMT-lgXHePWMvga_pB0c86JAsX6cyeqIkiBBZJkPk-bz7-v2wjbg2eo47VypCsZRjlMQpyZqJRUH9S0LrNHdDqFoJbSwnPc4kQOy9nRPDDRZ2h0PTQJ" alt="">
+                <img class="third_photo" src="https://psv4.userapi.com/c536436/u35211733/docs/d34/ab64d8b34649/third_photo.png?extra=AG4C-kIrwCs3zH3YVDA1gpakj5Jfza5QZPKU6ucwR5G7eRttzvUMAZ18oWAvXTXDGg_Ezcqmj-7or37xlVHY2eZFn1A7XpLYW0LQH0Hf63uiTI7V4ULY73K2opliHsGCCkU1opcxiF_rAvEVAPEZ" alt="">
+                <img class="four_photo" src="https://psv4.userapi.com/c536436/u35211733/docs/d27/8916fa46c947/four_photo.png?extra=aIpWXWNtCOLC_q1ZcxkIad8WVRikwqpDj88-g6FHm0W_cz-sO44wz8szjw7qyjSN_9JOIbXw2CA-iwep5b_urPW8qEmgKV6mTe4YQ2tveEsonvsPlaP7-fUMoSWj6XWWYgYCUqGFYJroUQJnlGw9" alt="">
+                <img class="five_photo" src="https://psv4.userapi.com/c536436/u35211733/docs/d3/39f3fffada51/five_photo.png?extra=kApwXDk_qsm5yKdprYEaxdGDafPhxw3hNnIDHLpBO44il88bJNbXMBmbgCxzfajInrWGvcT32pPT_tgC0SkET-NQZbjvpX3eNDJGrltq864qh5-3FvxP3A0cHe35INIMSqo4eFcMTqv40CrmA0Hi" alt="">
             </div>
 
             <div class="first-principe-text">
