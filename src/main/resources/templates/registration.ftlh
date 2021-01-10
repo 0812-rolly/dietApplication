@@ -267,6 +267,7 @@
                         <option value="u5">Экстра</option>
                     </select></p>
             </div>
+            <input type="hidden" name="_csrf" value="${_csrf.token}">
             <#if name != "unknown">
                 <div><input type="submit" class="button" value="Сохранить" /></div>
             <#else>
