@@ -3,7 +3,12 @@
 <@h.header>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Регистрация</title>
+        <#if name != "unknown">
+            <title>Изменить настройки</title>
+        <#else>
+            <title>Регистрация</title>
+        </#if>
+
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;700&display=swap" rel="stylesheet">
         <#--    <link rel="stylesheet" href="style.css">-->
@@ -218,27 +223,23 @@
             <img class="spices" src="https://psv4.userapi.com/c537232/u35211733/docs/d1/bb982db9ebec/spices.png?extra=YTVW9v99hyRFLlPPgZvOycM5zOoybwVTaGLjLAWLYFY4Klp-vD2GoTicqNT6teAFQMpHvOaZCuuq29h15bHR5XYurhCkD4-sK7qHIbmLOk6sex4nyJHmeTOaf8rOwzWc-52xYye76UJCxnas9TK-" alt="">
 
         </header>
-        <div class="questions">
-            <form action="/registration" method="POST" name="GetInfoForm">
-                <!-- дописать файл, обрабатывающий полученные данные и метод -->
-
+        <form action="/registration" method="post"  class="form">
+            <div class="questions">
                 <p>Почта</p>
-                <input type="text" name="login">
+                <input type="text" name="email">
 
                 <p>Пароль</p>
                 <input type="text" name="password">
 
                 <p>Пол</p>
                 <!-- <input type="text" name="gender"> -->
-                <form>
-                    <p><select name="gender">
-                            <option value="u1">Женский</option>
-                            <option value="u2">Мужской</option>
-                        </select></p>
-                </form>
+                <p><select name="gender">
+                        <option value="u1">Женский</option>
+                        <option value="u2">Мужской</option>
+                    </select></p>
 
                 <p>Рост (см)</p>
-                <input type="text" name="growth">
+                <input type="text" name="height">
 
                 <p>Вес (кг)</p>
                 <input type="text" name="weight">
@@ -258,27 +259,20 @@
                     <li class="extra"><span class="extra">Экстра</span>-активность - несколько тренировок в день</li>
                 </ol>
 
-                <form>
-                    <p><select name="activity">
-                            <option value="u1">Минимальная</option>
-                            <option value="u2">Слабая</option>
-                            <option value="u1">Средняя</option>
-                            <option value="u2">Высокая</option>
-                            <option value="u1">Экстра</option>
-                        </select></p>
-                </form>
-            </form>
-
-        </div>
-
-        <#if isAdmin>
-            <div><input type="submit" class="button" value="Сохранить" /></div>
-        <#else>
-            <div><input type="submit" class="button" value="Зарегистрироваться" /></div>
-        </#if>
-
-        <!-- End of Info Section -->
-
+                <p><select name="activity">
+                        <option value="u1">Минимальная</option>
+                        <option value="u2">Слабая</option>
+                        <option value="u3">Средняя</option>
+                        <option value="u4">Высокая</option>
+                        <option value="u5">Экстра</option>
+                    </select></p>
+            </div>
+            <#if name != "unknown">
+                <div><input type="submit" class="button" value="Сохранить" /></div>
+            <#else>
+                <div><input type="submit" class="button" value="Зарегистрироваться" /></div>
+            </#if>
+        </form>
     </div>
     </body>
 </@h.header>
