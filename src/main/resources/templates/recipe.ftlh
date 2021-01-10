@@ -15,7 +15,7 @@
                 --white-color: #FFFFFF;
                 --gray-color: #F1F2F2;
                 --brightGreen-color: #36D633;
-                --orange-colour: #EC8032;
+                --orange-colour: #ff7d1f;
                 --brightRed-color: #FABCC7;
                 --brightYellow-color: #F4EB98;
                 --lightOrange-color: #FFF0E5;
@@ -23,6 +23,7 @@
                 --lightGreen-color: #E9FDE6;
                 --lightBlue-color: #EEF3FF;
                 --lightPurple-color: #F3EDFF;
+                --orange-hover-color: #ff7d1f;
             }
 
             * {
@@ -39,6 +40,30 @@
                 padding: 0 0px;
             }
 
+            a.ration_btn {
+                position: absolute;
+                width: 310px;
+                height: 72.21px;
+                left: 790px;
+                top: 3100px;
+                background: #EC8032;
+                box-shadow: 0px 0px 16px 4px rgba(251, 202, 27, 0.3), 13px 13px 26px rgba(0, 0, 0, 0.25), inset -2px 5px 6px rgba(255, 244, 244, 0.41);
+                border-radius: 100px;
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 72.21px;
+                text-decoration: none;
+                text-align: center;
+                color: var(--white-color);
+                transition: background-color 400ms;
+                z-index: 1;
+            }
+
+            a.ration_btn:hover {
+                background: var(--orange-hover-color);
+            }
             /* Title Section */
 
             .recipe-container {
