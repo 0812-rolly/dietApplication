@@ -230,7 +230,13 @@
                 <p>Пол</p>
                 <!-- <input type="text" name="gender"> -->
                 <p><select name="gender">
-                        <option selected="selected">${us.gender}</option>
+                        <option selected disabled hidden>
+                            <#if us.gender == "FEMALE">
+                                Женский
+                            <#else>
+                                Мужской
+                            </#if>
+                        </option>
                         <option value="FEMALE">Женский</option>
                         <option value="MALE">Мужской</option>
                     </select></p>
@@ -257,7 +263,19 @@
                 </ol>
 
                 <p><select name="activity">
-                        <option selected="selected">${us.activity}</option>
+                        <option selected disabled hidden>
+                            <#if us.activity == "MINIMUM">
+                                Минимальная
+                            <#elseif us.activity == "LOW">
+                                Слабая
+                            <#elseif us.activity == "NORMAL">
+                                Средняя
+                            <#elseif us.activity == "HIGH">
+                                Высокая
+                            <#else>
+                                Экстра
+                            </#if>
+                        </option>
                         <option value="MINIMUM">Минимальная</option>
                         <option value="LOW">Слабая</option>
                         <option value="NORMAL">Средняя</option>
